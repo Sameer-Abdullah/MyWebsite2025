@@ -1,0 +1,69 @@
+@import "tailwindcss";
+:root {
+  /* luminous dark theme */
+  --bg: #05070a;
+  --bg-soft: #0a0d12;
+  --ink: #e8ecf1;
+  --ink-dim: #b7c0cc;
+  --glow-1: 255 255 255 / 0.08;
+  --glow-2: 255 255 255 / 0.14;
+  color-scheme: dark;
+}
+html, body { background: var(--bg); color: var(--ink); }
+
+/* marquee for skills */
+@keyframes marquee {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(-50%) }
+}
+
+/* subtle text gradient helper */
+.text-glow {
+  background: linear-gradient(180deg, #fff, #cbd5e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (pointer: fine) {
+  html, body, a, button { cursor: none; }
+}
+
+@keyframes spin-8s { to { transform: rotate(360deg); } }
+
+.glow-ring {
+  background:
+    conic-gradient(from 0deg,
+      rgba(255,255,255,.25),
+      rgba(255,255,255,.05) 30%,
+      rgba(255,255,255,.25) 60%,
+      rgba(255,255,255,.05) 80%,
+      rgba(255,255,255,.25));
+  filter: blur(12px);
+  animation: spin-8s 8s linear infinite;
+}
