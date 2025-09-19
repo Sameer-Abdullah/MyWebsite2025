@@ -51,9 +51,9 @@ export default function ContactModal({ open, onClose, github, linkedin }: Props)
     setOk(true);
     form.reset();                                       
     setTimeout(onClose, 900);
-  } catch (error: any) {
+  } catch (error: unknown) {                        
     setOk(false);
-    setErr(error?.message || "Could not send");
+    setErr(error instanceof Error ? error.message : "Could not send");
   } finally {
     setSending(false);
   }

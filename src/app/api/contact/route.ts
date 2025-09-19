@@ -12,15 +12,16 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",   // change to your verified domain later
-      to: "sa.sameer.abdullah@gmail.com",          // <-- your inbox
+      from: "Portfolio <onboarding@resend.dev>",   
+      to: "sa.sameer.abdullah@gmail.com",          
       subject: subject || "New message from your portfolio",
-      replyTo: from || undefined,                  // lets you reply to the sender
+      replyTo: from || undefined,                  
       text: `From: ${from || "unknown"}\n\n${message}`,
     });
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    return NextResponse.json({ ok: false, error: err?.message ?? "Send failed" }, { status: 500 });
+  }  catch (err: unknown) {                          
+    const msg = err instanceof Error ? err.message : "Send failed";
+    return NextResponse.json({ ok: false, error: msg }, { status: 500 });
   }
 }

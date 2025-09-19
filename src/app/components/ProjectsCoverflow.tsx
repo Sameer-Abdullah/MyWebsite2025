@@ -109,17 +109,23 @@ export default function ProjectsCoverflow() {
   const [active, setActive] = useState<Project | null>(null);
 
   useEffect(() => {
-    const el = railRef.current;
-    if (!el) return;
-    const onWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        el.scrollLeft += e.deltaY;
-      }
-    };
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel as any);
-  }, []);
+  const el = railRef.current;
+  if (!el) return;
+
+  const onWheel = (e: WheelEvent) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    }
+  };
+
+
+  const handler: EventListener = (ev) => onWheel(ev as unknown as WheelEvent);
+
+  el.addEventListener("wheel", handler, { passive: false });
+  return () => el.removeEventListener("wheel", handler);
+}, []);
+
 
   const THRESHOLD = 6;
 
