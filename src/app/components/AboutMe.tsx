@@ -34,9 +34,9 @@ export default function AboutMe() {
           </motion.h2>
 
           <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.6 }} transition={{ duration: 0.5, delay: 0.05 }} className="text-slate-300 leading-relaxed">
-  I&rsquo;m Sameer — a software-engineering-bound builder who loves motion,
-  3D, and performant UI. I ship clean, testable code and turn ideas
-  into experiences that feel alive.          </motion.p>
+            I&rsquo;m Sameer — a software-engineering-bound builder who loves motion,
+            3D, and performant UI. I ship clean, testable code and turn ideas
+            into experiences that feel alive.</motion.p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             {["TypeScript", "React / Next.js", "Tailwind", "Framer Motion", "GSAP", "Three.js"].map((t, i) => (
