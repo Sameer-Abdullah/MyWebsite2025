@@ -6,15 +6,17 @@ import AboutMe from "./components/AboutMe";
 import SiteFooter from "./components/SiteFooter";
 
 
+
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen"> 
       <ParallaxHero /> 
       <SkillsShowcase />       
       <ProjectsCoverflow />
       <ExperiencePath />
       <AboutMe />               
-      <SiteFooter />            
+      <SiteFooter />  
+               
     </main>
   );
 }

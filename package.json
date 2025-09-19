@@ -2,13 +2,14 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "engines": { "node": ">=18.18" },
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "export": "next build && next export",
-    "start": "next start",
-    "lint": "eslint"
-  },
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint"
+}
+,
   "dependencies": {
     "@react-email/render": "^1.2.3",
     "framer-motion": "^12.23.15",
@@ -29,3 +30,4 @@
     "typescript": "^5"
   }
 }
+

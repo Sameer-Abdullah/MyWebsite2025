@@ -162,7 +162,7 @@ export default function ContactModal({ open, onClose, github, linkedin }: Props)
                 </form>
               )}
 
-              {/* hint */}
+
               <div className="mt-3 text-xs text-slate-400">
                 Messages are delivered securely to my inbox.
               </div>

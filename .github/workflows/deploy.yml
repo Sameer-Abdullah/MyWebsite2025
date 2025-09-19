@@ -20,7 +20,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      - run: npm run export            # ⬅️ builds + next export -> /out
+      - run: npm run export            
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
